@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Buddy - Study Planner</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Study Buddy</h1>
+    <h4 style="color: black">KHAIRUL ADZHAR BIN NORAIDI  - S1G1 -  BITS -  B032320036</h4>
+    <p>Organize your study schedule and track your progress</p>
+  </header>
+
+  <main>
+    <!-- Task Input Form -->
+    <section class="task-input">
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Enter task title" required>
+        <input type="date" id="task-deadline" required>
+        <select id="task-category" required>
+          <option value="" disabled selected>Select category</option>
+          <option value="Math">Math</option>
+          <option value="Biology">Biology</option>
+          <option value="History">History</option>
+          <option value="Others">Others</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Controls: Search, Filter, Sort, Clear -->
+    <section class="controls">
+      <input type="text" id="search-input" placeholder="Search tasks...">
+      <select id="filter-select">
+        <option value="all">All Tasks</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+      <button id="sort-btn">Sort by Deadline</button>
+      <button id="clear-completed-btn">Clear Completed</button>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+      <div>Total: <span id="total-count">0</span></div>
+      <div>Pending: <span id="pending-count">0</span></div>
+      <div>Completed: <span id="completed-count">0</span></div>
+    </section>
+
+    <!-- List of Tasks -->
+    <section class="task-list">
+      <h2>Task List</h2>
+      <ul id="tasks"></ul>
+    </section>
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+      <button id="modal-confirm">Yes</button>
+      <button id="modal-cancel">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Edit Task</h3>
+      <form id="edit-form">
+        <input type="text" id="edit-title" placeholder="Enter task title" required>
+        <input type="date" id="edit-deadline" required>
+        <select id="edit-category" required>
+          <option value="Math">Math</option>
+          <option value="Biology">Biology</option>
+          <option value="History">History</option>
+          <option value="Others">Others</option>
+        </select>
+        <div class="modal-actions">
+          <button type="submit" id="edit-save">Save</button>
+          <button type="button" id="edit-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
